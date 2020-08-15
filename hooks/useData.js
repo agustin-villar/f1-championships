@@ -1,13 +1,14 @@
 import useSWR from 'swr';
+import { mapDriversInfo } from '../utils/index';
+
+const API_URL = 'http://ergast.com/api/f1/';
 
 async function fetcher(season) {
-  const racesResponse = await fetch(`http://ergast.com/api/f1/${season}/results/1.json`);
-  const { MRData: { RaceTable: { Races } } } = await racesResponse.json();
-  const driverStandingsResponse = await fetch(`http://ergast.com/api/f1/${season}/driverStandings.json`);
-  const { MRData: { StandingsTable: { StandingsLists: [lastStanding] } } } = await driverStandingsResponse.json();
-  const { DriverStandings: [firstPlace] } = lastStanding;
-
-  return { races: Races, driver: firstPlace.Driver };
+  const racesResponse = await fetch(`${API_URL}${season}/results/1.json`);
+  const racesData = await racesResponse.json();
+  const driverStandingsResponse = await fetch(`${API_URL}${season}/driverStandings.json`);
+  const driverStandingsData = await driverStandingsResponse.json();
+  return mapDriversInfo(racesData, driverStandingsData);
 }
 
 export default function useData(season) {
