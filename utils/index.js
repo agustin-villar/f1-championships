@@ -6,9 +6,14 @@ function mapDriversInfo(races, driverStandings) {
 
   const driversSum = Races.reduce((acc, { Circuit: { circuitName, Location: { locality, country } }, Results }) => {
     const raceWinner = Results[0].Driver;
+    const constructorWinner = Results[0].Constructor;
     const raceData = {
       circuit: { name: circuitName, locality, country },
-      driver: { ...raceWinner, seasonWinner: raceWinner.driverId === seasonWinnerId },
+      driver: {
+        ...raceWinner,
+        seasonWinner: raceWinner.driverId === seasonWinnerId,
+        constructor: constructorWinner.name,
+      },
     };
 
     return [...acc, raceData];

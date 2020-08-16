@@ -11,12 +11,29 @@ async function fetcher(season) {
   return mapDriversInfo(racesData, driverStandingsData);
 }
 
-export default function useData(season) {
+export default function useSeasonData(season) {
   const { data, error } = useSWR(season, fetcher, { revalidateOnFocus: false, initialData: null });
+  let state = '';
+
+  if (!data && !error) {
+    state = 'pending';
+  }
+
+  if (data) {
+    state = 'resolved';
+  }
+
+  if (error) {
+    state = 'rejected';
+  }
+
+  if (!season) {
+    state = 'idle';
+  }
 
   return {
     data,
-    isLoading: !error && !data,
-    isError: error,
+    state,
+    error,
   };
 }
