@@ -22,6 +22,7 @@ export default function Home() {
         <h1>Hello world</h1>
         <Select
           label="Select a season:"
+          name="season"
           options={[
             { text: '2005', value: 2005 },
             { text: '2006', value: 2006 },

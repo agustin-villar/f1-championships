@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
+    color: ${({ theme }) => theme.colors.mediumgray};
     padding: 0;
     margin: 0;
     font-size: 16px;

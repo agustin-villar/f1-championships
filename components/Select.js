@@ -1,12 +1,12 @@
-import DIV from './Select.styles';
+import Wrapper from './Select.styles';
 
-export default function Select({ label, options, onChange }) {
+export default function Select({ label, name, options, onChange }) {
   return (
-    <DIV>
-      <label htmlFor={label}>{label}</label>
+    <Wrapper>
+      <label htmlFor={name}>{label}</label>
       <select
         className="select"
-        name={label}
+        name={name}
         onChange={e => {
           const { target: { value } } = e;
           onChange(value);
@@ -17,6 +17,6 @@ export default function Select({ label, options, onChange }) {
           <option key={`${label}-${value}`} value={value}>{text}</option>
         ))}
       </select>
-    </DIV>
+    </Wrapper>
   );
 }
