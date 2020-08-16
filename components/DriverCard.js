@@ -1,18 +1,9 @@
-import useSWR from 'swr';
-
+import useWikiImage from '../hooks/useWikiImage';
 import { Wrapper, Footer } from './DriverCard.styles';
-
-const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 export default function Card({ data }) {
   const { circuit, driver } = data;
-  const wikiPage = driver.url.substr(driver.url.indexOf('wiki/') + 5);
-  console.log('wikiPage: ', wikiPage);
-  const { data: imgData, error } = useSWR(
-    `https://en.wikipedia.org/api/rest_v1/page/media-list/${wikiPage}`,
-    fetcher,
-    { revalidateOnFocus: false, initialData: null },
-  );
+  const { imgData } = useWikiImage(driver.url);
 
   return (
     <Wrapper img={imgData ? imgData.items[0].srcset[0].src : ''}>

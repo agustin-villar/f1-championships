@@ -22,4 +22,9 @@ function mapDriversInfo(races, driverStandings) {
   return driversSum;
 }
 
-export { mapDriversInfo };
+function getWikipediaPageName(url) {
+  const pattern = 'wiki/';
+  return url.substr(url.indexOf(pattern) + pattern.length);
+}
+
+export { mapDriversInfo, getWikipediaPageName };
