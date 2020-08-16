@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Select from '../components/Select';
-import List from '../components/List';
+import DriversList from '../components/DriversList';
 
 export default function Home() {
   // const { data, isLoading, isError } = useData(2005);
@@ -9,8 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>F1 time machine</title>
       </Head>
 
       <main>
@@ -32,7 +31,7 @@ export default function Home() {
           ]}
           onChange={e => setFilter(e)}
         />
-        <List filter={filter} />
+        <DriversList filter={filter} />
       </main>
 
       <footer>

@@ -10,7 +10,7 @@ export default function Select({ label, options, onChange }) {
           onChange(value);
         }}
       >
-        <option value="no-fetch">Make your selection</option>
+        <option value="">Make your selection</option>
         {options.map(({ text, value }) => (
           <option key={`${label}-${value}`} value={value}>{text}</option>
         ))}
