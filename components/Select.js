@@ -1,6 +1,8 @@
+import DIV from './Select.styles';
+
 export default function Select({ label, options, onChange }) {
   return (
-    <div>
+    <DIV>
       <label htmlFor={label}>{label}</label>
       <select
         className="select"
@@ -15,6 +17,6 @@ export default function Select({ label, options, onChange }) {
           <option key={`${label}-${value}`} value={value}>{text}</option>
         ))}
       </select>
-    </div>
+    </DIV>
   );
 }
