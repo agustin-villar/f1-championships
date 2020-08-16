@@ -1,7 +1,9 @@
 import useSeasonData from '../hooks/useSeasonData';
 import DriverCard from './DriverCard';
 
-export default function List({ filter }) {
+import List from './DriversList.styles';
+
+export default function DriversList({ filter }) {
   const { data, state, error } = useSeasonData(filter);
 
   if (state === 'idle') {
@@ -15,13 +17,13 @@ export default function List({ filter }) {
   if (state === 'resolved') {
     console.log(data);
     return (
-      <ul>
+      <List>
         {data.map(race => (
           <li key={race.circuit.name}>
             <DriverCard data={race} />
           </li>
         ))}
-      </ul>
+      </List>
     );
   }
 
