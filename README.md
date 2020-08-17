@@ -1,6 +1,6 @@
 # F1 Championships
 
-Web application that allows users to check the winning drivers and the races they won in a specific season of the Formula 1 championship. It's currently limited to seasons between 2005 and 2015;
+Web application that allows users to check the winning drivers and the races they won in a specific season of the Formula 1 championship. It's currently limited to the seasons that took place between 2005 and 2015;
 
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -14,7 +14,6 @@ Web application that allows users to check the winning drivers and the races the
 - Clone this repo.
 - Navigate to the project root on a terminal window.
 - Then, run the development server:
-
 ```bash
 npm install && npm run dev
 ```
@@ -23,10 +22,10 @@ npm install && npm run dev
 
 ## About the App
 
-- The application was built using the [Next.js](https://nextjs.org/) framework, because of its simplicity and pre-render capabilities while being able to take advantage of the reactive nature of React.
-- Styling is provided by [styled-components](https://styled-components.com/) choosen by its theming capabilities and Component based philosophy. The support and documentation are quite extensive making it a solid and recognized tool in the React's ecosystem.
+- The application was built using the [Next.js](https://nextjs.org/) framework, chosen because of its simplicity and pre-render capabilities while being able to take advantage of the reactive nature of React.
+- Styling is provided by [styled-components](https://styled-components.com/) choosen by its theming advantages and Component based philosophy. The support and documentation are quite extensive making it a solid and recognized tool in the React's ecosystem.
 - Data fetching is provided by [swr](https://swr.vercel.app/) which is the recomended tool for data fetching inside the Next framework, it provides reusable hooks, cache capabilities and built-in error handling.
-- Unit testing is implemented with [jest](https://jestjs.io/).
+- Unit testing is implemented using [jest](https://jestjs.io/).
 
 ## Issues or questions?
 

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>F1 time machine</title>
+        <title>F1 Championships 2005-2015</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -33,7 +33,7 @@ export default function Home() {
 
       <Container>
         <SelectWrapper>
-          <Select label="Pick a season" name="season" options={generateYearsOptions(1995, 2015)} onChange={e => setFilter(e)} />
+          <Select label="Pick a season" name="season" options={generateYearsOptions(2005, 2015)} onChange={e => setFilter(e)} />
           <p>
             Winner of the season:
             <span />
