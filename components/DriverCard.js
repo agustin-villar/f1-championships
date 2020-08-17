@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import useWikiImage from '../hooks/useWikiImage';
 import { Wrapper, Footer } from './DriverCard.styles';
 
@@ -20,3 +22,21 @@ export default function Card({ data }) {
     </Wrapper>
   );
 }
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    circuit: PropTypes.shape({
+      round: PropTypes.string,
+      name: PropTypes.string,
+      locality: PropTypes.string,
+      country: PropTypes.string,
+    }).isRequired,
+    driver: PropTypes.shape({
+      givenName: PropTypes.string,
+      familyName: PropTypes.string,
+      seasonWinner: PropTypes.bool,
+      nationality: PropTypes.string,
+      url: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+};

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Wrapper from './Select.styles';
 
 export default function Select({ label, name, options, onChange }) {
@@ -27,3 +29,10 @@ export default function Select({ label, name, options, onChange }) {
     </Wrapper>
   );
 }
+
+Select.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  onChange: PropTypes.func.isRequired,
+};
