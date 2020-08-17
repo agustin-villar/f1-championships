@@ -2,6 +2,7 @@ import useSeasonData from '../hooks/useSeasonData';
 import DriverCard from './DriverCard';
 
 import List from './DriversList.styles';
+import LoadingPlaceholder from './LoadingPlaceholder';
 
 export default function DriversList({ filter }) {
   const { data, state, error } = useSeasonData(filter);
@@ -11,7 +12,7 @@ export default function DriversList({ filter }) {
   }
 
   if (state === 'pending') {
-    return (<p>loading...</p>);
+    return (<LoadingPlaceholder />);
   }
 
   if (state === 'resolved') {
@@ -29,7 +30,7 @@ export default function DriversList({ filter }) {
   if (state === 'rejected') {
     return (
       <p>
-        something went wrong:
+        Something went wrong:
         {error.message}
       </p>
     );

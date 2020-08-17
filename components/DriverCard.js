@@ -5,8 +5,6 @@ export default function Card({ data }) {
   const { circuit, driver } = data;
   const { imgData } = useWikiImage(driver.url);
 
-  console.log(driver);
-
   return (
     <Wrapper img={imgData ? imgData.items[0].srcset[0].src : ''} winner={driver.seasonWinner}>
       <div>
@@ -15,7 +13,7 @@ export default function Card({ data }) {
         <p>{`${driver.nationality}.`}</p>
       </div>
       <Footer>
-        <span>Race</span>
+        <span>{`${circuit.round}. Race`}</span>
         <p>{`${circuit.name}.`}</p>
         <p>{`${circuit.locality}, ${circuit.country}.`}</p>
       </Footer>
