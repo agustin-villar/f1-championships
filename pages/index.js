@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/Header';
 import Select from '../components/Select';
 import DriversList from '../components/DriversList';
 
@@ -18,8 +19,9 @@ export default function Home() {
         />
       </Head>
 
+      <Header />
+
       <Container>
-        <h1>Hello world</h1>
         <Select
           label="Select a season:"
           name="season"

@@ -4,6 +4,7 @@ const theme = {
     darkgray: '#1e1e13',
     mediumgray: '#333',
     white: '#fff',
+    black: '#000',
   },
   breakpoints: {
     mobile: '500px',

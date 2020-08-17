@@ -15,7 +15,6 @@ export default function DriversList({ filter }) {
   }
 
   if (state === 'resolved') {
-    console.log(data);
     return (
       <List>
         {data.map(race => (

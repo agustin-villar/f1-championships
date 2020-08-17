@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { getSpacing } from '../styles/utils';
 
 const Container = styled.main`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: calc(100% - ${getSpacing(4)});
 

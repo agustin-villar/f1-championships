@@ -10,6 +10,7 @@ const caretSvg = `%3Csvg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="ht
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: ${getSpacing(3)};
 
   label {
     margin-bottom: ${getSpacing(1)};
@@ -32,6 +33,10 @@ const Wrapper = styled.div`
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${getFontSize(16)};
     padding: ${getSpacing(2)} ${dropdownButtonSize}px ${getSpacing(2)} ${getSpacing(2)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    margin-bottom: ${getSpacing(5)};
   }
 `;
 
