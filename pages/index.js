@@ -5,7 +5,7 @@ import DriversList from '../components/DriversList';
 import Footer from '../components/Footer';
 import { generateOptions } from '../utils/index';
 
-import { Container, SelectWrapper } from './index.styles';
+import { Container, SelectWrapper } from '../styles/index.styles';
 
 export default function Home() {
   const [filter, setFilter] = React.useState('');
