@@ -5,6 +5,8 @@ import Wrapper from './styles';
 export default function Select({ label, name, options, onChange }) {
   const selectNode = React.useRef(null);
 
+  // If the html component still holds the value from previous visits
+  // it will execute the onChange callback based on that value.
   React.useEffect(() => {
     onChange(selectNode.current.value);
   }, []);
@@ -23,7 +25,7 @@ export default function Select({ label, name, options, onChange }) {
       >
         <option value="">Make your selection</option>
         {options.map(({ text, value }) => (
-          <option key={`${label}-${value}`} value={value}>{text}</option>
+          <option key={`${value}`} value={value}>{text}</option>
         ))}
       </select>
     </Wrapper>

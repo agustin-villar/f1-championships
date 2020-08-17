@@ -11,6 +11,17 @@ async function fetcher(season) {
   return mapDriversInfo(racesData, driverStandingsData);
 }
 
+/**
+* Custom hook that retrieves results information for a f1 seasond,
+* and driver standings for the same season, once the requests are done,
+* the information will be cleaned up and merged for ease of use
+* See docs at: http://ergast.com/mrd/methods/results/ and
+* http://ergast.com/mrd/methods/standings/
+* The hook uses the SWR library for data fetching: https://swr.vercel.app/
+* @param {Number} season - The season from which the data will be retrieved.
+* @returns {Object} An object including the requested data or and error given the case,
+* it will also return the actual state of the request.
+*/
 export default function useSeasonData(season) {
   const { data, error } = useSWR(season, fetcher, { revalidateOnFocus: false, initialData: null });
   let state = '';

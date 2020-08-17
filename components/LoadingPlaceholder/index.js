@@ -3,6 +3,10 @@ import LoadingGrid from './styles';
 
 const averageRacesAmount = 20;
 
+/**
+* Component that will render empty spans to let the user know
+* that the data is being processed.
+*/
 export default function LoadingPlaceholder() {
   return (
     <LoadingGrid>
