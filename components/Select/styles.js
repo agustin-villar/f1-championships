@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getFontSize, getSpacing } from '../styles/utils';
+import { getFontSize, getSpacing } from '../../styles/utils';
 
 const caretWidth = 24;
 const dropdownButtonSize = 56;

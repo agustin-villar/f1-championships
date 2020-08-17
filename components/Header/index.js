@@ -1,5 +1,5 @@
-import StyledHeader from './Header.styles';
-import Logo from './Logo';
+import StyledHeader from './styles';
+import Logo from '../Logo';
 
 export default function Header() {
   return (

@@ -1,5 +1,5 @@
-import StyledFooter from './Footer.styles';
-import Logo from './Logo';
+import StyledFooter from './styles';
+import Logo from '../Logo';
 
 export default function Footer() {
   return (

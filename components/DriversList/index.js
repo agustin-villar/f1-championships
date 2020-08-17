@@ -1,8 +1,8 @@
-import useSeasonData from '../hooks/useSeasonData';
-import DriverCard from './DriverCard';
+import useSeasonData from '../../hooks/useSeasonData';
+import DriverCard from '../DriverCard';
 
-import { List, Paragraph } from './DriversList.styles';
-import LoadingPlaceholder from './LoadingPlaceholder';
+import { List, Paragraph } from './styles';
+import LoadingPlaceholder from '../LoadingPlaceholder';
 
 export default function DriversList({ filter }) {
   const { data, state, error } = useSeasonData(filter);

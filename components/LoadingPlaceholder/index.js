@@ -1,5 +1,5 @@
-import Logo from './Logo';
-import LoadingGrid from './LoadingPlaceholder.styles';
+import Logo from '../Logo';
+import LoadingGrid from './styles';
 
 const averageRacesAmount = 20;
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import useWikiImage from '../hooks/useWikiImage';
-import { Wrapper, Footer } from './DriverCard.styles';
+import useWikiImage from '../../hooks/useWikiImage';
+import { Wrapper, Footer } from './styles';
 
 export default function Card({ data }) {
   const { circuit, driver } = data;

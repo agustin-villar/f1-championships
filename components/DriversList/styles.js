@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getSpacing, getFontSize } from '../styles/utils';
+import { getSpacing, getFontSize } from '../../styles/utils';
 
 const List = styled.ul`
   display: grid;

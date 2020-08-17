@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getSpacing } from '../styles/utils';
+import { getSpacing } from '../../styles/utils';
 
 const LoadingGrid = styled.div`
   display: grid;

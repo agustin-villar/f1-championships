@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Wrapper from './Select.styles';
+import Wrapper from './styles';
 
 export default function Select({ label, name, options, onChange }) {
   const selectNode = React.useRef(null);
