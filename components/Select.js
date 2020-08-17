@@ -1,10 +1,17 @@
 import Wrapper from './Select.styles';
 
 export default function Select({ label, name, options, onChange }) {
+  const selectNode = React.useRef(null);
+
+  React.useEffect(() => {
+    onChange(selectNode.current.value);
+  }, []);
+
   return (
     <Wrapper>
       <label htmlFor={name}>{label}</label>
       <select
+        ref={selectNode}
         className="select"
         name={name}
         onChange={e => {
