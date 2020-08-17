@@ -9,6 +9,7 @@ const Container = styled.main`
   width: calc(100% - ${getSpacing(4)});
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: calc(100% - ${getSpacing(6)});
     max-width: ${({ theme }) => theme.breakpoints.maxDesktop};
   }
 `;

@@ -31,6 +31,8 @@ const StyledHeader = styled.header`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: ${getSpacing(2)} ${getSpacing(3)};
+
     h1 {
       font-size: ${getFontSize(22)};
     }
