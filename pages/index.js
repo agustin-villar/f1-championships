@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Select from '../components/Select';
 import DriversList from '../components/DriversList';
+import Footer from '../components/Footer';
 
 import Container from './index.styles';
 
@@ -43,9 +44,7 @@ export default function Home() {
         <DriversList filter={filter} />
       </Container>
 
-      <footer>
-        lol
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -24,12 +24,16 @@ const StyledHeader = styled.header`
     text-transform: uppercase;
   }
 
+  svg {
+    width: 80px;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     h1 {
       font-size: ${getFontSize(22)};
     }
 
-    img {
+    svg {
       width: 100px;
     }
   }
@@ -41,7 +45,7 @@ const StyledHeader = styled.header`
       font-size: ${getFontSize(24)};
     }
 
-    img {
+    svg {
       width: 110px;
     }
   }
