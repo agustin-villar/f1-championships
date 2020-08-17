@@ -5,7 +5,7 @@ import DriversList from '../components/DriversList';
 import Footer from '../components/Footer';
 import { generateYearsOptions } from '../utils/index';
 
-import { Container, SelectWrapper } from '../styles/index.styles';
+import Container from '../styles/index.styles';
 
 export default function Home() {
   const [filter, setFilter] = React.useState('');
@@ -32,19 +32,13 @@ export default function Home() {
       <Header />
 
       <Container>
-        <SelectWrapper>
-          {/**
-           * To navigate between seasons a select element was chosen over a list, among other reasons because it offers 
-           * a more friendly layout specially on mobile devices, it doesn't occupy lots of space in the interface, 
-           * and more items (seasons) can be potentially added in an easy manner without impacting the user experience.
-           * The component is based on a native HTML select which makes it highly accesible as well.
-           */}
-          <Select label="Pick a season" name="season" options={generateYearsOptions(2005, 2015)} onChange={e => setFilter(e)} />
-          <p>
-            Winner of the season:
-            <span />
-          </p>
-        </SelectWrapper>
+        {/**
+         * To navigate between seasons a select element was chosen over a list, among other reasons because it offers 
+         * a more friendly layout specially on mobile devices, it doesn't occupy lots of space in the interface, 
+         * and more items (seasons) can be potentially added in an easy manner without impacting the user experience.
+         * The component is based on a native HTML select which makes it highly accesible as well.
+         */}
+        <Select label="Pick a season" name="season" options={generateYearsOptions(2005, 2015)} onChange={e => setFilter(e)} />
         <DriversList filter={filter} />
       </Container>
 
