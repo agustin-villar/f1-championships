@@ -3,16 +3,9 @@ import Header from '../components/Header';
 import Select from '../components/Select';
 import DriversList from '../components/DriversList';
 import Footer from '../components/Footer';
+import { generateOptions } from '../utils/index';
 
-import Container from './index.styles';
-
-function generateOptions(firstYear, lastYear) {
-  const options = [];
-  for (let i = firstYear; i <= lastYear; i += 1) {
-    options.push({ text: i.toString(), value: i });
-  }
-  return options;
-}
+import { Container, SelectWrapper } from './index.styles';
 
 export default function Home() {
   const [filter, setFilter] = React.useState('');
@@ -31,12 +24,13 @@ export default function Home() {
       <Header />
 
       <Container>
-        <Select
-          label="Select a season:"
-          name="season"
-          options={generateOptions(2005, 2015)}
-          onChange={e => setFilter(e)}
-        />
+        <SelectWrapper>
+          <Select label="Pick a season" name="season" options={generateOptions(2005, 2015)} onChange={e => setFilter(e)} />
+          <p>
+            Winner of the season:
+            <span />
+          </p>
+        </SelectWrapper>
         <DriversList filter={filter} />
       </Container>
 

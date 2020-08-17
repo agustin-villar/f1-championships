@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-import { getSpacing, getFontSize } from '../styles/utils';
-
-const squareSize = 24;
-const halfSquareSize = squareSize * 0.5;
+import { getSpacing, getFontSize, checkeredBackground } from '../styles/utils';
 
 const Wrapper = styled.article`
   background-color: ${({ theme }) => theme.colors.darkgray};
@@ -36,16 +33,9 @@ const Wrapper = styled.article`
     }
   }
 
-  ${({ winner, theme }) => (winner ? `
+  ${({ winner }) => (winner ? `
     &:before {
-      background-color: ${theme.colors.white};
-      background-image:
-        linear-gradient(45deg, ${theme.colors.black} 25%, transparent 25%),
-        linear-gradient(135deg, ${theme.colors.black} 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, ${theme.colors.black} 75%),
-        linear-gradient(135deg, transparent 75%, ${theme.colors.black} 75%);
-      background-position: 0 0, ${halfSquareSize}px 0, ${halfSquareSize}px ${halfSquareSize}px, 0 ${halfSquareSize}px;
-      background-size: ${squareSize}px ${squareSize}px;
+      ${checkeredBackground()}
       box-shadow: 0 3px 2px 0 rgba(70, 0, 53, 0.22);
       content: '';
       display: block;
@@ -69,4 +59,4 @@ const Footer = styled.footer`
   }
 `;
 
-export { Wrapper, Footer };
+export { Wrapper, Footer, checkeredBackground };

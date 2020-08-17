@@ -12,3 +12,17 @@ export const getSpacing = ratio => `${ratio * 8}px`;
 * @returns {String} The desired dimension in pixels
 */
 export const getFontSize = (size, base = 16) => `${size / base}rem`;
+
+export function checkeredBackground(fgColor = 'white', bgColor = 'black', size = 24) {
+  const halfSize = size * 0.5;
+  return `
+    background-color: ${fgColor};
+    background-image:
+      linear-gradient(45deg, ${bgColor} 25%, transparent 25%),
+      linear-gradient(135deg, ${bgColor} 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, ${bgColor} 75%),
+      linear-gradient(135deg, transparent 75%, ${bgColor} 75%);
+    background-position: 0 0, ${halfSize}px 0, ${halfSize}px ${halfSize}px, 0 ${halfSize}px;
+    background-size: ${size}px ${size}px;
+  `;
+}

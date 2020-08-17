@@ -29,4 +29,12 @@ function getWikipediaPageName(url) {
   return url.substr(url.indexOf(pattern) + pattern.length);
 }
 
-export { mapDriversInfo, getWikipediaPageName };
+function generateOptions(firstYear, lastYear) {
+  const options = [];
+  for (let i = firstYear; i <= lastYear; i += 1) {
+    options.push({ text: i.toString(), value: i });
+  }
+  return options;
+}
+
+export { mapDriversInfo, getWikipediaPageName, generateOptions };

@@ -9,7 +9,7 @@ export default function Card({ data }) {
     <Wrapper img={imgData ? imgData.items[0].srcset[0].src : ''} winner={driver.seasonWinner}>
       <div>
         <h2>{`${driver.givenName} ${driver.familyName}`}</h2>
-        <p>{`Driving for: ${driver.constructor}.`}</p>
+        <p>{`Driving for ${driver.constructor}.`}</p>
         <p>{`${driver.nationality}.`}</p>
       </div>
       <Footer>
