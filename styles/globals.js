@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.body};
     line-height: 1.5;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
   * {
     box-sizing: border-box;

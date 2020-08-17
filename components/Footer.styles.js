@@ -6,6 +6,12 @@ const StyledFooter = styled.footer`
   display: flex;
   padding: 0 0 ${getSpacing(5)} 0;
 
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
   svg {
     width: 80px;
   }

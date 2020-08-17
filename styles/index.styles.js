@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getSpacing, getFontSize, checkeredBackground } from '../styles/utils';
+import { getSpacing, getFontSize, checkeredBackground } from './utils';
 
 const Container = styled.main`
   display: flex;
