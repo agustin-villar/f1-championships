@@ -15,7 +15,12 @@ export default function Card({ data }) {
         <p>{`${driver.nationality}.`}</p>
       </div>
       <Footer>
-        <span>{`${circuit.round}. Race`}</span>
+        <span>
+          1
+          <sup>st</sup>
+          {' '}
+          Place at
+        </span>
         <p>{`${circuit.name}.`}</p>
         <p>{`${circuit.locality}, ${circuit.country}.`}</p>
       </Footer>
