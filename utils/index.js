@@ -4,7 +4,9 @@ function mapDriversInfo(races, driverStandings) {
   const { DriverStandings: [firstPlace] } = finalStanding;
   const { Driver: { driverId: seasonWinnerId } } = firstPlace;
 
-  const driversSum = Races.reduce((acc, { round, Circuit: { circuitName, Location: { locality, country } }, Results }) => {
+  const driversSum = Races.reduce((
+    acc, { round, Circuit: { circuitName, Location: { locality, country } }, Results },
+  ) => {
     const raceWinner = Results[0].Driver;
     const constructorWinner = Results[0].Constructor;
     const raceData = {

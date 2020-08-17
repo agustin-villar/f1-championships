@@ -6,7 +6,9 @@ const averageRacesAmount = 20;
 export default function LoadingPlaceholder() {
   return (
     <LoadingGrid>
-      {Array(averageRacesAmount).fill().map(() => <span><Logo color="#b2b2b2" /></span>)}
+      {Array(averageRacesAmount).fill().map(
+        (item, index) => <span key={`span-${index.toString()}`}><Logo color="#b2b2b2" /></span>,
+      )}
     </LoadingGrid>
   );
 }
