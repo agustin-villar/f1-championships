@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { mapDriversInfo } from '../utils/index';
 
-const API_URL = 'http://ergast.com/api/f1/';
+const API_URL = 'https://ergast.com/api/f1/';
 
 async function fetcher(season) {
   const racesResponse = await fetch(`${API_URL}${season}/results/1.json`);
