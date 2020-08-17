@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Select from '../components/Select';
 import DriversList from '../components/DriversList';
 import Footer from '../components/Footer';
-import { generateOptions } from '../utils/index';
+import { generateYearsOptions } from '../utils/index';
 
 import { Container, SelectWrapper } from '../styles/index.styles';
 
@@ -25,7 +25,7 @@ export default function Home() {
 
       <Container>
         <SelectWrapper>
-          <Select label="Pick a season" name="season" options={generateOptions(1995, 2015)} onChange={e => setFilter(e)} />
+          <Select label="Pick a season" name="season" options={generateYearsOptions(1995, 2015)} onChange={e => setFilter(e)} />
           <p>
             Winner of the season:
             <span />

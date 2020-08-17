@@ -13,6 +13,13 @@ export const getSpacing = ratio => `${ratio * 8}px`;
 */
 export const getFontSize = (size, base = 16) => `${size / base}rem`;
 
+/**
+* Will return the needed css rules to generate a checkered background
+* @param {string} [fgColor=white] - The foreground color
+* @param {string} [fgColor=black] - The background color
+* @param {Number} [size=24] - The size of the squares in pixels
+* @returns {string} CSS rules that will render a checkered background
+*/
 export function checkeredBackground(fgColor = 'white', bgColor = 'black', size = 24) {
   const halfSize = size * 0.5;
   return `
