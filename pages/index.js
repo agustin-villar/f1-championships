@@ -33,6 +33,12 @@ export default function Home() {
 
       <Container>
         <SelectWrapper>
+          {/**
+           * To navigate between seasons a select element was chosen over a list, among other reasons because it offers 
+           * a more friendly layout specially on mobile devices, it doesn't occupy lots of space in the interface, 
+           * and more items (seasons) can be potentially added in an easy manner without impacting the user experience.
+           * The component is based on a native HTML select which makes it highly accesible as well.
+           */}
           <Select label="Pick a season" name="season" options={generateYearsOptions(2005, 2015)} onChange={e => setFilter(e)} />
           <p>
             Winner of the season:
