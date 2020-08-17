@@ -1,4 +1,5 @@
-/* eslint-disable max-len */
+import PropTypes from 'prop-types';
+
 export default function Logo({ color }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 300 75" overflow="visible">
@@ -17,4 +18,8 @@ export default function Logo({ color }) {
 
 Logo.defaultProps = {
   color: '#E30613',
+};
+
+Logo.propTypes = {
+  color: PropTypes.string,
 };

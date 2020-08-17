@@ -1,14 +1,18 @@
 import useSeasonData from '../hooks/useSeasonData';
 import DriverCard from './DriverCard';
 
-import List from './DriversList.styles';
+import { List, Paragraph } from './DriversList.styles';
 import LoadingPlaceholder from './LoadingPlaceholder';
 
 export default function DriversList({ filter }) {
   const { data, state, error } = useSeasonData(filter);
 
   if (state === 'idle') {
-    return (<p>Select something for God&apos;s sake</p>);
+    return (
+      <Paragraph>
+        Select a season to see the winners of every race during that year.
+      </Paragraph>
+    );
   }
 
   if (state === 'pending') {
@@ -16,7 +20,7 @@ export default function DriversList({ filter }) {
   }
 
   if (state === 'resolved') {
-    return (
+    return data.length ? (
       <List>
         {data.map(race => (
           <li key={race.circuit.name}>
@@ -24,15 +28,22 @@ export default function DriversList({ filter }) {
           </li>
         ))}
       </List>
+    ) : (
+      <Paragraph>
+        The selected season has no information available, please try a different one.
+      </Paragraph>
     );
   }
 
   if (state === 'rejected') {
     return (
-      <p>
+      <Paragraph>
         Something went wrong:
+        <br />
         {error.message}
-      </p>
+        <br />
+        Please try again later.
+      </Paragraph>
     );
   }
 }

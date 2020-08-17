@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getSpacing } from '../styles/utils';
+import { getSpacing, getFontSize } from '../styles/utils';
 
 const List = styled.ul`
   display: grid;
@@ -19,4 +19,11 @@ const List = styled.ul`
   }
 `;
 
-export default List;
+const Paragraph = styled.p`
+  font-size: ${getFontSize(24)};
+  margin: ${getSpacing(10)} auto;
+  max-width: 80%;
+  text-align: center;
+`;
+
+export { List, Paragraph };

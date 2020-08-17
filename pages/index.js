@@ -25,7 +25,7 @@ export default function Home() {
 
       <Container>
         <SelectWrapper>
-          <Select label="Pick a season" name="season" options={generateOptions(2005, 2015)} onChange={e => setFilter(e)} />
+          <Select label="Pick a season" name="season" options={generateOptions(1990, 2015)} onChange={e => setFilter(e)} />
           <p>
             Winner of the season:
             <span />
